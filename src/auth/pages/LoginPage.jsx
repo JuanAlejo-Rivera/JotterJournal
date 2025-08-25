@@ -30,7 +30,6 @@ export const LoginPage = () => {
 
   const { status, errorMessage } = useSelector(state => state.auth) //Buscamos y tomamos elementos del estado global, store
 
-
   const {
     formState, displayName, email, password, onInputChange,
     isFormValid, displayNameValid, emailValid, passwordValid
@@ -56,7 +55,7 @@ export const LoginPage = () => {
 
 
   return (
-    <AuthLayout title="Login">
+    <AuthLayout title="Iniciar sesión">
       <form onSubmit={onSubmit} aria-label="submit-form" className="animate__animated animate__fadeIn animate__faster">
         <Grid2 container spacing={2}>
           {/* Email Input */}
@@ -112,7 +111,7 @@ export const LoginPage = () => {
               disabled={isAuthenticating}
               color="secondary"
             >
-              Login
+              iniciar sesión
             </Button>
           </Grid2>
 

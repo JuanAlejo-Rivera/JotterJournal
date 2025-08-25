@@ -1,8 +1,12 @@
 import { Box, Grid2, Typography } from "@mui/material"
-import { Outlet } from "react-router-dom"
+import { Outlet, useLocation } from "react-router-dom"
 import Logo from "../../Components/Logo"
 
 export const AuthLayout = ({ children, title = '' }) => {
+
+    const location = useLocation();
+    const isLogin = location.pathname.includes('login')
+
     return (
         <>
             <Grid2
@@ -16,15 +20,35 @@ export const AuthLayout = ({ children, title = '' }) => {
 
                 <Box textAlign="center" sx={{ mb: 3 }}>
                     <Logo width={120} height={120} />
-                    <Typography variant="h4" sx={{ fontWeight: "bold", mt: 2, color: "white" }}>
-                        Iniciar Sesión
-                    </Typography>
-                    <Typography variant="body1" sx={{ color: "white", mt: 1 }}>
-                        Planea, recuerda y registra tu camino{" "}
-                        <span style={{ color: "#0a7cba", fontWeight: "bold" }}>
-                            iniciando sesión en este formulario
-                        </span>
-                    </Typography>
+
+                    {isLogin ? (
+                        <>
+                            <Typography variant="h4" sx={{ fontWeight: "bold", mt: 2, color: "white" }}>
+                                Iniciar Sesión
+                            </Typography>
+                            <Typography variant="body1" sx={{ color: "white", mt: 1 }}>
+                                Planea, recuerda y registra tu camino{" "}
+                                <span style={{ color: "#0a7cba", fontWeight: "bold" }}>
+                                    iniciando sesión en este formulario
+                                </span>
+                            </Typography>
+                        </>
+                    ) : (
+                        <>
+                            <Typography variant="h4" sx={{ fontWeight: "bold", mt: 2, color: "white" }}>
+                                Crear cuenta
+                            </Typography>
+                            <Typography variant="body1" sx={{ color: "white", mt: 1 }}>
+                                Llena el formulario para {" "}
+                                <span style={{ color: "#0a7cba", fontWeight: "bold" }}>
+                                    crear tu cuenta
+                                </span>
+                            </Typography>
+                        </>
+                    )
+                    }
+
+
                 </Box>
 
                 <Grid2
@@ -38,9 +62,9 @@ export const AuthLayout = ({ children, title = '' }) => {
                     }}
                     className='box-shadow'
                 >
-             <Typography variant="h6" sx={{ mb: 2, fontWeight: "bold" }}>
-                    {title}
-                </Typography>
+                    <Typography variant="h6" sx={{ mb: 2, fontWeight: "bold" }}>
+                        {title}
+                    </Typography>
 
 
                     {children}
