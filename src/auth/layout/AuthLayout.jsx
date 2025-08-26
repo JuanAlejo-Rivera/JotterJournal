@@ -1,4 +1,4 @@
-import { Box, Grid2, Typography } from "@mui/material"
+import { Box, GlobalStyles, Grid2, Typography } from "@mui/material"
 import { Outlet, useLocation } from "react-router-dom"
 import Logo from "../../Components/Logo"
 
@@ -15,11 +15,23 @@ export const AuthLayout = ({ children, title = '' }) => {
                 direction="column"
                 alignItems="center"
                 justifyContent="center"
-                sx={{ minHeight: "100vh", backgroundColor: "primary.main", padding: 4 }}
+                sx={{
+                    minHeight: "100vh",
+                    backgroundColor: "primary.main",
+                    padding: 4
+                }}
+                style={{ gap: 20 }}
             >
 
-                <Box textAlign="center" sx={{ mb: 3 }}>
-                    <Logo width={120} height={120} />
+                <Box
+                    textAlign="center"
+                    sx={{ mb: 3 }}
+
+                >
+                    <Logo
+                        width={12} height={10}
+                        style={{ maxWidth: "150px", width: "100%", height: "auto" }}
+                    />
 
                     {isLogin ? (
                         <>
@@ -71,6 +83,7 @@ export const AuthLayout = ({ children, title = '' }) => {
 
                 </Grid2>
             </Grid2>
+
         </>
     )
 }

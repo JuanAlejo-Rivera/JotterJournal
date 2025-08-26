@@ -2,6 +2,7 @@ import { LogoutOutlined, MenuOutlined } from "@mui/icons-material"
 import { AppBar, Grid2, IconButton, Toolbar, Typography } from "@mui/material"
 import { startLogout } from "../../store/auth/thunks";
 import { useDispatch } from "react-redux";
+import Logo from "../../Components/Logo";
 
 
 export const NavBar = ({ drawerWidth = 240 }) => {
@@ -37,7 +38,9 @@ export const NavBar = ({ drawerWidth = 240 }) => {
                         justifyContent: "space-between", // Separa los elementos a los extremos
                         flexGrow: 1, // Asegura que ocupe todo el espacio disponible
                     }}>
-                    <Typography variant="h6" noWrap component='div'>JournalApp</Typography>
+        
+                   
+                    <Typography variant="h6" noWrap component='div'>Jotter</Typography>
 
                     <IconButton
                         onClick={onLogout}

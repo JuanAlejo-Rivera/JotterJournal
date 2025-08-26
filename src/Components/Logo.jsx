@@ -1,12 +1,16 @@
 import { Box } from "@mui/material";
 
-export default function Logo() {
+export default function Logo({ maxWidth = 150, sx = {} }) {
   return (
-    <Box
-      component="img"
-      src="/LogoJotter.png"
-      alt="Logotipo jotter"
-      sx={{ height: 500, mb: 1, padding: 2 }}
-    />
+
+      <img
+        src="/LogoJotter.png"
+        alt="Logo"
+        style={{
+          width: "100%",   
+          height: "auto",  
+          display: "block" 
+        }}
+      />
   );
 }

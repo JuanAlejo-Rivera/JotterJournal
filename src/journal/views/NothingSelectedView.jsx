@@ -17,7 +17,7 @@ export const NothingSelectedView = () => {
                 <Button>
                     <StarOutline sx={{ fontSize: 100, color: "white" }} />
                 </Button>
-                <Grid2 container size={{ xs: 12 }} justifyContent='center'>
+                <Grid2 container size={{ xs: 6, sm: 8, md: 10, lg: 12, xl: 12 }} justifyContent='center'>
                     <Typography color='white' variant="h5">Selecciona o crea una entrada</Typography>
                 </Grid2>
             </Grid2>
