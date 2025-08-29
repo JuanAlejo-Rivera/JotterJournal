@@ -32,7 +32,6 @@ export const AuthLayout = ({ children, title = '' }) => {
                         width={12} height={10}
                         style={{ maxWidth: "150px", width: "100%", height: "auto" }}
                     />
-
                     {isLogin ? (
                         <>
                             <Typography variant="h4" sx={{ fontWeight: "bold", mt: 2, color: "white" }}>
