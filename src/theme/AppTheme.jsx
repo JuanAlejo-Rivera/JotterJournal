@@ -5,7 +5,6 @@ import { jotterTheme } from "./jotterTheme"
 export const AppTheme = ({ children }) => {
     return (
         <ThemeProvider theme={ jotterTheme }>
-            {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
             <CssBaseline />
 
             {children}
